@@ -711,7 +711,7 @@ keybind = ctrl+alt+z=text:\u{001B}\u{001A}
 # keybind = ctrl+shift+o=new_split:right
 # keybind = alt+nine=goto_tab:9
 # keybind = ctrl+shift+enter=toggle_split_zoom
-keybind = super+shift+t=new_tab
+# keybind = super+shift+t=new_tab
 # keybind = ctrl+comma=open_config
 # keybind = super+ctrl+shift+left=resize_split:left,10
 # keybind = ctrl+equal=increase_font_size:1
@@ -732,18 +732,13 @@ keybind = ctrl+shift+r=reload_config
 keybind = alt+c=copy_to_clipboard
 keybind = alt+v=paste_from_clipboard
 
-keybind = alt+shift+h=goto_split:left
-keybind = alt+shift+j=goto_split:bottom
-keybind = alt+shift+k=goto_split:top
-keybind = alt+shift+l=goto_split:right
+# keybind = ctrl+shift+x=new_split:down
+# keybind = ctrl+shift+v=new_split:right
 
-keybind = ctrl+shift+x=new_split:down
-keybind = ctrl+shift+v=new_split:right
-
-keybind = ctrl+alt+left_bracket=resize_split:left,50
-keybind = ctrl+alt+right_bracket=resize_split:right,50
-keybind = ctrl+alt+shift+left_bracket=resize_split:up,50
-keybind = ctrl+alt+shift+right_bracket=resize_split:down,50
+# keybind = ctrl+alt+left_bracket=resize_split:left,50
+# keybind = ctrl+alt+right_bracket=resize_split:right,50
+# keybind = ctrl+alt+shift+left_bracket=resize_split:up,50
+# keybind = ctrl+alt+shift+right_bracket=resize_split:down,50
 keybind = ctrl+alt+shift+i=inspector:toggle
 
 keybind = ctrl+shift+q=text:\u{FF01}
