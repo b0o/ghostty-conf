@@ -793,7 +793,7 @@ keybind = ctrl+shift+l=text:\u{00d3}
 # Changing these values will only apply after restart.
 window-padding-x = 10
 
-window-padding-y = 10
+window-padding-y = 8
 # The viewport dimensions are usually not perfectly divisible by the cell
 # size. In this case, some extra padding on the end of a column and the bottom
 # of the final row may exist. If this is `true`, then this extra padding
@@ -806,7 +806,29 @@ window-padding-y = 10
 # apply. The other padding is applied first and may affect how many grid cells
 # actually exist, and this is applied last in order to balance the padding
 # given a certain viewport size and grid cell size.
-window-padding-balance = false
+window-padding-balance = true
+
+# The color of the padding area of the window. Valid values are:
+#
+# * `background` - The background color specified in `background`.
+# * `extend` - Extend the background color of the nearest grid cell.
+# * `extend-always` - Same as "extend" but always extends without applying
+#   any of the heuristics that disable extending noted below.
+#
+# The "extend" value will be disabled in certain scenarios. On primary
+# screen applications (i.e. not something like Neovim), the color will not
+# be extended vertically if any of the following are true:
+#
+# * The nearest row has any cells that have the default background color.
+#   The thinking is that in this case, the default background color looks
+#   fine as a padding color.
+# * The nearest row is a prompt row (requires shell integration). The
+#   thinking here is that prompts often contain powerline glyphs that
+#   do not look good extended.
+# * The nearest row contains a perfect fit powerline character. These
+#   don't look good extended.
+#
+window-padding-color = background
 
 # Synchronize rendering with the screen refresh rate. If true, this will
 # minimize tearing and align redraws with the screen but may cause input
