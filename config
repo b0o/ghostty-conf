@@ -1,3 +1,22 @@
+# The command to run, usually a shell. If this is not an absolute path, it'll
+# be looked up in the `PATH`. If this is not set, a default will be looked up
+# from your system. The rules for the default lookup are:
+#
+#   * `SHELL` environment variable
+#
+#   * `passwd` entry (user information)
+#
+# This can contain additional arguments to run the command with. If additional
+# arguments are provided, the command will be executed using `/bin/sh -c`.
+# Ghostty does not do any shell command parsing.
+#
+# If you're using the `ghostty` CLI there is also a shortcut to run a command
+# with arguments directly: you can use the `-e` flag. For example: `ghostty -e
+# fish --with --custom --args`.
+# command = /usr/bin/env "COLORSCHEME=${COLORSCHEME:-lavi}" zsh
+# command = zsh -c 'tmux new-session -e "COLORSCHEME=${COLORSCHEME:-lavi}"'
+command = zsh
+
 # The font families to use.
 #
 # You can generate the list of valid values using the CLI:
@@ -337,23 +356,6 @@ background-blur-radius = 0
 unfocused-split-opacity = 0.7
 
 unfocused-split-fill =
-# The command to run, usually a shell. If this is not an absolute path, it'll
-# be looked up in the `PATH`. If this is not set, a default will be looked up
-# from your system. The rules for the default lookup are:
-#
-#   * `SHELL` environment variable
-#
-#   * `passwd` entry (user information)
-#
-# This can contain additional arguments to run the command with. If additional
-# arguments are provided, the command will be executed using `/bin/sh -c`.
-# Ghostty does not do any shell command parsing.
-#
-# If you're using the `ghostty` CLI there is also a shortcut to run a command
-# with arguments directly: you can use the `-e` flag. For example: `ghostty -e
-# fish --with --custom --args`.
-# command = /usr/bin/env "COLORSCHEME=${COLORSCHEME:-lavi}" zsh
-command = zsh -c 'tmux new-session -e "COLORSCHEME=${COLORSCHEME:-lavi}"'
 
 # If true, keep the terminal open after the command exits. Normally, the
 # terminal window closes when the running command (such as a shell) exits.
