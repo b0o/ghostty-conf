@@ -181,38 +181,33 @@ adjust-cursor-thickness =
 # terminals. Only new terminals will use the new configuration.
 grapheme-width-method = unicode
 
-# A named theme to use. The available themes are currently hardcoded to the
-# themes that ship with Ghostty. On macOS, this list is in the `Ghostty.app/
-# Contents/Resources/ghostty/themes` directory. On Linux, this list is in the
-# `share/ghostty/themes` directory (wherever you installed the Ghostty "share"
+# A theme to use. If the theme is an absolute pathname, Ghostty will attempt
+# to load that file as a theme. If that file does not exist or is inaccessible,
+# an error will be logged and no other directories will be searched.
+#
+# If the theme is not an absolute pathname, two different directories will be
+# searched for a file name that matches the theme. This is case sensitive on
+# systems with case-sensitive filesystems. It is an error for a theme name to
+# include path separators unless it is an absolute pathname.
+#
+# The first directory is the `themes` subdirectory of your Ghostty
+# configuration directory. This is `$XDG_CONFIG_DIR/ghostty/themes` or
+# `~/.config/ghostty/themes`.
+#
+# The second directory is the `themes` subdirectory of the Ghostty resources
+# directory. Ghostty ships with a multitude of themes that will be installed
+# into this directory. On macOS, this list is in the `Ghostty.app/Contents/
+# Resources/ghostty/themes` directory. On Linux, this list is in the `share/
+# ghostty/themes` directory (wherever you installed the Ghostty "share"
 # directory.
 #
 # To see a list of available themes, run `ghostty +list-themes`.
 #
 # Any additional colors specified via background, foreground, palette, etc.
 # will override the colors specified in the theme.
-#
-# This configuration can be changed at runtime, but the new theme will only
-# affect new cells. Existing colored cells will not be updated. Therefore,
-# after changing the theme, you should restart any running programs to ensure
-# they get the new colors.
-#
-# A future update will allow custom themes to be installed in certain
-# directories.
-theme =
+# theme = rose-pine-dawn
+theme = lavi
 
-# Background color for the window.
-background = #211D34
-
-# Foreground color for the window.
-foreground = #FFF1E0
-
-# The foreground and background color for selection. If this is not set, then
-# the selection color is just the inverted window background and foreground
-# (note: not to be confused with the cell bg/fg).
-selection-foreground = #000000
-
-selection-background = #FFFFFF
 # Swap the foreground and background colors of cells for selection. This
 # option overrides the `selection-foreground` and `selection-background`
 # options.
@@ -232,34 +227,7 @@ selection-invert-fg-bg = false
 # that text will become black or white.
 #
 # This value does not apply to Emoji or images.
-minimum-contrast = 1
-
-# Color palette for the 256 color form that many terminal applications use.
-# The syntax of this configuration is `N=HEXCODE` where `N` is 0 to 255 (for
-# the 256 colors in the terminal color table) and `HEXCODE` is a typical RGB
-# color code such as `#AABBCC`.
-#
-# For definitions on all the codes [see this cheat
-# sheet](https://www.ditig.com/256-colors-cheat-sheet).
-palette = 0=#282c34
-palette = 1=#e06c75
-palette = 2=#98c379
-palette = 3=#e5c07b
-palette = 4=#61afef
-palette = 5=#c678dd
-palette = 6=#56b6c2
-palette = 7=#abb2bf
-palette = 8=#5c6370
-palette = 9=#e06c75
-palette = 10=#98c379
-palette = 11=#e5c07b
-palette = 12=#61afef
-palette = 13=#c678dd
-palette = 14=#56b6c2
-palette = 15=#ffffff
-
-# The color of the cursor. If this is not set, a default will be chosen.
-cursor-color = #D8DEE9
+minimum-contrast = 1.0
 
 # The opacity level (opposite of transparency) of the cursor. A value of 1
 # is fully opaque and a value of 0 is fully transparent. A value less than 0
