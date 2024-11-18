@@ -854,7 +854,7 @@ window-inherit-working-directory = true
 # focused window. If no window was previously focused, the default font size
 # will be used. If this is false, the default font size specified in the
 # configuration `font-size` will be used.
-window-inherit-font-size = true
+window-inherit-font-size = false
 
 # If false, windows won't have native decorations, i.e. titlebar and
 # borders.
